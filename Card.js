@@ -5,6 +5,8 @@ export default class card{
         this.number = number;
         this. palo = palo;
         this.valor = valor;
+        console.log(`Se ha creado una nueva carta: ${this.number} de ${this.palo}`);
+
     }
 
 }
