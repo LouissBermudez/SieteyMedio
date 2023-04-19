@@ -6,3 +6,13 @@ body{
 .barajaJugador{
 
 }
+
+.botonPlantarse{
+    height: 50px;
+    border-radius: 10px;
+    background-color: red;
+}
+.botonPlantarse:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
