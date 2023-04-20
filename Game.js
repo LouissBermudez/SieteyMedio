@@ -10,6 +10,13 @@ export default class game{
         this.currentPlayer = this.player;
     }
 
+    startGame(){
+        this.deck.shuffle();
+        this.deck.darCartaComputer();
+        this.deck.darCartaJugador();
+    }
+
+
     stand(){
         if (this.currentPlayer === this.player){
             this.currentPlayer = this.computer;

@@ -26,20 +26,31 @@ export default class deck {
         }
 
 
-
     }
-    darCartaJugador(){
+
+    darCartaJugador() {
         const carta = this.generalDeck.pop();
         this.player_array.push(carta)
         console.log(this.player_array)
     }
-    darCartaComputer(){
+
+    darCartaComputer() {
         const carta = this.generalDeck.pop();
         this.computer_array.push(carta)
         console.log(this.computer_array)
     }
 
+    shuffle() {
+        // obtener un índice aleatorio y intercambiar la carta en esa posición
+        for (let i = this.generalDeck.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [this.generalDeck[i], this.generalDeck[j]] = [this.generalDeck[j], this.generalDeck[i]];
+        }
 
 
+    }
+    borrarDeck(){
+        this.generalDeck.length = 0;
 
+    }
 }
