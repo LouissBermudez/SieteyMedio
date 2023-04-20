@@ -13,9 +13,12 @@ export default class game{
     stand(){
         if (this.currentPlayer === this.player){
             this.currentPlayer = this.computer;
+            this.deck.darCartaComputer();
         }else{
             this.currentPlayer = this.player;
+            this.deck.darCartaJugador();
+
         }
-        this.deck.darCartaJugador();
+
     }
 }
