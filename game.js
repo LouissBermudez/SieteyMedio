@@ -12,6 +12,7 @@ export default class Game{
 
     startGame(){
         this.deck.shuffle();
+
         this.deck.darCartaComputer();
         this.deck.darCartaJugador();
     }

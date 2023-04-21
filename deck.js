@@ -1,6 +1,5 @@
 import Card from "./card.js";
 export default class Deck {
-    static deckisFull = false;
     constructor() {
         this.generalDeck = [];
         this.player_array = [];
@@ -17,25 +16,41 @@ export default class Deck {
                 if (number === 10 || number === 11 || number === 12) {
                     value = 0.5;
                 }
-                const image = `./imagenes/cartas/${number}_de_${suit}.png`;
+                const image = `./imagenes/cartas/${suit}_${number}.jpg`;
                 const carta = new Card(image, number, suit, value);
                 this.generalDeck.push(carta);
-            }
 
+            }
 
         }
 
 
+
     }
 
-    darCartaJugador() {
+
+
+
+
+
+
+
+darCartaJugador() {
         const carta = this.generalDeck.pop();
+        const contenedorImagenes = document.getElementById("barajaJugador");
+        const imagen = document.createElement("img")
+        imagen.src = carta.img;
+        contenedorImagenes.appendChild(imagen);
         this.player_array.push(carta)
         console.log(this.player_array)
     }
 
-    darCartaComputer() {
+darCartaComputer() {
         const carta = this.generalDeck.pop();
+        const contenedorImagenes = document.getElementById("barajaComputer");
+        const imagen = document.createElement("img")
+        imagen.src = carta.img;
+        contenedorImagenes.appendChild(imagen);
         this.computer_array.push(carta)
         console.log(this.computer_array)
     }
