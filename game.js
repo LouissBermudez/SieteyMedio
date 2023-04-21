@@ -1,8 +1,8 @@
-import player from "./Player.js";
-import deck from "./Deck.js";
+import player from "./player.js";
+import deck from "./deck.js";
 
 
-export default class game{
+export default class Game{
     constructor(deck){
         this.player = new player();
         this.deck = deck;
@@ -28,4 +28,12 @@ export default class game{
         }
 
     }
+
+
+
+
+
+
+
+
 }
