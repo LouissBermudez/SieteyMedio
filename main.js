@@ -2,9 +2,9 @@ import {siguienteJugador, comenzarJuego, volveraJugar, darCarta} from "./vista.j
 
 
 comenzarJuego();
+darCarta();
 siguienteJugador();
 volveraJugar();
-darCarta();
 
 
 

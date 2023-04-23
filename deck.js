@@ -4,6 +4,8 @@ export default class Deck {
         this.generalDeck = [];
         this.player_array = [];
         this.computer_array = [];
+        this.puntosPlayer = 0;
+        this.puntosComputer = 0;
         console.log(this.generalDeck)
     }
 
@@ -39,20 +41,32 @@ darCartaJugador() {
         const carta = this.generalDeck.pop();
         const contenedorImagenes = document.getElementById("barajaJugador");
         const imagen = document.createElement("img")
+        this.puntosPlayer += carta.valor;
         imagen.src = carta.img;
         contenedorImagenes.appendChild(imagen);
         this.player_array.push(carta)
-        console.log(this.player_array)
+        console.log(carta.number ,this.puntosPlayer);
+
     }
 
+
+/*PointTrack(){
+        const carta = this.player_array.pop()
+        let contadorPuntos = carta.value;
+        contadorPuntos ++;
+        if (  > 0 || carta.value < 8){
+
+        }
+}*/
 darCartaComputer() {
         const carta = this.generalDeck.pop();
         const contenedorImagenes = document.getElementById("barajaComputer");
         const imagen = document.createElement("img")
+        this.puntosComputer += carta.valor;
         imagen.src = carta.img;
         contenedorImagenes.appendChild(imagen);
         this.computer_array.push(carta)
-        console.log(this.computer_array)
+        console.log(carta.number, this.puntosComputer)
     }
 
     shuffle() {
@@ -68,4 +82,9 @@ darCartaComputer() {
            location.reload();
 
     }
+
+
+
+
+
 }

@@ -6,29 +6,40 @@ export default class Game{
     constructor(deck){
         this.player = new player();
         this.deck = deck;
-        this.computer = new player();
-        this.currentPlayer = this.player;
+
     }
 
     startGame(){
         this.deck.shuffle();
-
-        this.deck.darCartaComputer();
         this.deck.darCartaJugador();
+        this.deck.darCartaComputer();
+
     }
 
 
-    stand(){
+
+    WinnerWinnerChickenDinner(){
+        const deck = new Deck;
+        if (deck.puntosPlayer < 0 || deck.puntosPlayer < 8){
+
+        }
+    }
+
+
+
+
+
+
+ /*   stand(){
         if (this.currentPlayer === this.player){
             this.currentPlayer = this.computer;
             this.deck.darCartaComputer();
-        }else{
-            this.currentPlayer = this.player;
-            this.deck.darCartaJugador();
-
         }
 
-    }
+
+    }*/
+
+
 
 
 
