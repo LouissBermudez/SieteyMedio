@@ -1,13 +1,11 @@
 import Deck from "./deck.js";
 import Game from "./game.js"
 import Card from "./card.js";
+import Player from "./player.js";
 
 
-
-//instaciamos la clase "Deck" y la calse "Game"
 let deck = new Deck();
 const juego = new Game(deck);
-const imagenCarta = new Card();
 
 
 
@@ -15,8 +13,8 @@ export function darCarta(){
     const hitButton = document.getElementById("hitcarta")
     hitButton.addEventListener('click',() =>{
 
-        deck.darCartaJugador();
-
+        juego.darCartaJugador();
+        juego.WinnerWinnerChickenDinner();
 
     });
 }
@@ -27,27 +25,25 @@ export function siguienteJugador(){
     const nextPlayerButton = document.getElementById('stand');
     nextPlayerButton.addEventListener('click', (event) => {
         if (event.target === nextPlayerButton) {
-            // llamar a la función stand() para cambiar de jugador
-            deck.darCartaComputer();
+            juego.darCartaComputer();
+            juego.WinnerWinnerChickenDinner();
+            ocultarBotonStand();
+
         }
+
+
+
     });
 }
-/*export function siguienteJugador(){
-    const nextPlayerButton = document.getElementById('stand');
-    nextPlayerButton.addEventListener('click', () => {
-        // llamar a la función stand() para cambiar de jugador
-        juego.stand();
-    });
-}*/
+
 export function comenzarJuego(){
     const contenedorImagenes = document.getElementById("imagenCartas");
     const startGameButton = document.getElementById('start')
         startGameButton.addEventListener('click', () => {
 
-
             deck.createDeck();
             juego.startGame();
-            ocultarBoton();
+            ocultarBotonStart();
 
         });
 
@@ -71,8 +67,13 @@ export function volveraJugar(){
 
 
 
-function ocultarBoton(){
+function ocultarBotonStart(){
     document.getElementById("start").style.display = "none";
+
+}
+function ocultarBotonStand(){
+    document.getElementById("hitcarta").style.display = "none";
+
 }
 
 

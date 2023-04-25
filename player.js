@@ -1,9 +1,8 @@
 import deck from "./deck.js";
-export default class player {
+export default class Player {
     constructor() {
-      //  this.name = name;
-       // this.money = money;
-        //this.points = points;
+        this.puntosPlayer = 0;
+        this.puntosComputer = 0;
     }
 
 
