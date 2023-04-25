@@ -1,9 +1,17 @@
-import deck from "./deck.js";
+// eslint-disable-next-line valid-jsdoc
+/**
+ * @class
+ * Clase para almacenar los puntos de cada jugador
+ */
 export default class Player {
-    constructor() {
-        this.puntosPlayer = 0;
-        this.puntosComputer = 0;
-    }
-
-
+  // eslint-disable-next-line valid-jsdoc
+  /**
+   * @constructor
+   * @description Contiene las variables que almacenan los puntos de cada jugador
+   * @
+   */
+  constructor() {
+    this.puntosPlayer = 0;
+    this.puntosComputer = 0;
+  }
 }

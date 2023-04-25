@@ -1,94 +1,74 @@
-import Deck from "./deck.js";
-import Game from "./game.js"
-import Card from "./card.js";
-import Player from "./player.js";
+import Deck from './deck.js';
+import Game from './game.js';
 
 
-let deck = new Deck();
+const deck = new Deck();
 const juego = new Game(deck);
 
 
-
-export function darCarta(){
-    const hitButton = document.getElementById("hitcarta")
-    hitButton.addEventListener('click',() =>{
-
-        juego.darCartaJugador();
-        juego.WinnerWinnerChickenDinner();
-
-    });
+/**
+ * Método el cual llama a las funciones "darCataJugador" y "winnerWinnerChickenDinner" al clicar el botón "hit"
+ */
+export function darCarta() {
+  const hitButton = document.getElementById('hitcarta');
+  hitButton.addEventListener('click', () => {
+    juego.darCartaJugador();
+    juego.winnerWinnerChickenDinner();
+  });
 }
 
 
-
-export function siguienteJugador(){
-    const nextPlayerButton = document.getElementById('stand');
-    nextPlayerButton.addEventListener('click', (event) => {
-        if (event.target === nextPlayerButton) {
-            juego.darCartaComputer();
-            juego.WinnerWinnerChickenDinner();
-            ocultarBotonStand();
-
-        }
-
-
-
-    });
-}
-
-export function comenzarJuego(){
-    const contenedorImagenes = document.getElementById("imagenCartas");
-    const startGameButton = document.getElementById('start')
-        startGameButton.addEventListener('click', () => {
-
-            deck.createDeck();
-            juego.startGame();
-            ocultarBotonStart();
-
-        });
-
-
-
+/**
+ * Método para dar carta a Computer, llamar al metodo "winner" y ocultar el botón "stand"
+ */
+export function siguienteJugador() {
+  const nextPlayerButton = document.getElementById('stand');
+  nextPlayerButton.addEventListener('click', (event) => {
+    if (event.target === nextPlayerButton) {
+      juego.darCartaComputer();
+      juego.winnerWinnerChickenDinner();
+      ocultarBotonStand();
+    }
+  });
 }
 
 
-export function volveraJugar(){
-    const restartButton = document.getElementById('restart');
-    restartButton.addEventListener('click', () =>{
-        deck.borrarDeck();
-
-    });
+/**
+ * Método para empezar el juego al clicar el botón "startGameButton"
+ */
+export function comenzarJuego() {
+  const startGameButton = document.getElementById('start');
+  startGameButton.addEventListener('click', () => {
+    deck.createDeck();
+    juego.startGame();
+    ocultarBotonStart();
+  });
 }
 
 
-
-
-
-
-
-
-function ocultarBotonStart(){
-    document.getElementById("start").style.display = "none";
-
-}
-function ocultarBotonStand(){
-    document.getElementById("hitcarta").style.display = "none";
-
+/**
+ * Método para resetear el juego al dar click en el botón "restart"
+ */
+export function volveraJugar() {
+  const restartButton = document.getElementById('restart');
+  restartButton.addEventListener('click', () =>{
+    deck.borrarDeck();
+  });
 }
 
 
+/**
+ * Método para ocultar el botón "Start" al clicarlo
+ */
+function ocultarBotonStart() {
+  document.getElementById('start').style.display = 'none';
+}
+
+/**
+ * Método para ocultar el botón "stand" al clicarlo
+ */
+function ocultarBotonStand() {
+  document.getElementById('hitcarta').style.display = 'none';
+}
 
 
-
-
-
-
-
-
-
-/*
-const prueba = document.getElementById("prueba")
-prueba.addEventListener('click', () =>{
-    deck.darCartaComputer();
-
-});*/
